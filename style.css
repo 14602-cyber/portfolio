@@ -229,3 +229,45 @@ h1{
 }
 
 }
+
+/* ===========================
+   Hobbies
+=========================== */
+
+.hobby-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:25px;
+    margin-top:30px;
+}
+
+.hobby-card{
+    background:rgba(255,255,255,.18);
+    border-radius:20px;
+    padding:25px;
+    text-align:center;
+    transition:.4s;
+    border:1px solid rgba(255,255,255,.25);
+}
+
+.hobby-card:hover{
+    transform:translateY(-10px) scale(1.03);
+    background:rgba(255,255,255,.28);
+    box-shadow:0 15px 25px rgba(0,0,0,.2);
+}
+
+.icon{
+    font-size:60px;
+    margin-bottom:15px;
+}
+
+.hobby-card h2{
+    margin-bottom:15px;
+    color:white;
+}
+
+.hobby-card p{
+    color:white;
+    line-height:1.7;
+    text-align:center;
+}
