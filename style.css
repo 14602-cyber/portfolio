@@ -1,4 +1,3 @@
-/* รีเซ็ตค่า */
 *{
     margin:0;
     padding:0;
@@ -6,143 +5,189 @@
     font-family:'Poppins',sans-serif;
 }
 
-/* พื้นหลัง */
 body{
-    height:100vh;
-    display:flex;
-    justify-content:center;
-    align-items:center;
+
     background:linear-gradient(135deg,#5B86E5,#36D1DC);
-    overflow:hidden;
-    position:relative;
-}
 
-/* วงกลมพื้นหลัง */
-body::before{
-    content:"";
-    position:absolute;
-    width:300px;
-    height:300px;
-    background:rgba(255,255,255,0.15);
-    border-radius:50%;
-    top:-100px;
-    left:-100px;
-}
+    min-height:100vh;
 
-body::after{
-    content:"";
-    position:absolute;
-    width:350px;
-    height:350px;
-    background:rgba(255,255,255,0.15);
-    border-radius:50%;
-    bottom:-150px;
-    right:-100px;
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    padding:30px;
 }
 
 /* กล่องหลัก */
-.container{
-    width:360px;
-    padding:35px;
-    text-align:center;
 
-    background:rgba(255,255,255,0.15);
-    backdrop-filter:blur(12px);
+.container{
+
+    width:700px;
+
+    background:rgba(255,255,255,.15);
+
+    backdrop-filter:blur(15px);
 
     border-radius:25px;
-    border:1px solid rgba(255,255,255,0.3);
+
+    padding:40px;
 
     color:white;
 
-    animation:popup 0.8s ease;
+    box-shadow:0 10px 25px rgba(0,0,0,.2);
+
+    animation:fade .8s;
+
 }
 
-/* รูปโปรไฟล์ */
-.profile{
-    width:150px;
-    height:150px;
-    border-radius:50%;
-    object-fit:cover;
-    border:5px solid white;
+/* หัวข้อ */
 
-    animation:float 3s ease-in-out infinite;
-}
-
-/* ชื่อ */
 h1{
-    margin-top:20px;
-    font-size:30px;
-}
 
-p{
-    margin-top:10px;
+    text-align:center;
+
     margin-bottom:30px;
-    opacity:0.9;
+
+    font-size:34px;
+
 }
 
-/* เมนู */
-.menu{
-    display:flex;
-    flex-direction:column;
-    gap:15px;
+/* กล่องข้อมูล */
+
+.card{
+
+    display:grid;
+
+    gap:18px;
+
 }
 
-.menu a{
-    text-decoration:none;
-    color:white;
-    padding:15px;
+/* รายการข้อมูล */
+
+.info{
+
+    background:rgba(255,255,255,.15);
+
+    padding:18px 20px;
+
     border-radius:15px;
-    background:rgba(255,255,255,0.15);
-    font-weight:600;
+
     transition:.3s;
+
 }
 
-.menu a:hover{
+.info:hover{
+
+    transform:translateX(10px);
+
+    background:rgba(255,255,255,.25);
+
+}
+
+.info span{
+
+    font-weight:bold;
+
+    font-size:18px;
+
+}
+
+.info p{
+
+    margin-top:8px;
+
+    font-size:17px;
+
+}
+
+/* ปุ่ม */
+
+.btn{
+
+    display:block;
+
+    margin:35px auto 0;
+
+    width:220px;
+
+    text-align:center;
+
+    text-decoration:none;
+
+    color:white;
+
+    background:#3F51B5;
+
+    padding:15px;
+
+    border-radius:50px;
+
+    transition:.3s;
+
+}
+
+.btn:hover{
+
     background:white;
-    color:#3f51b5;
-    transform:translateY(-5px) scale(1.05);
-    box-shadow:0 10px 20px rgba(0,0,0,0.3);
+
+    color:#3F51B5;
+
+    transform:scale(1.05);
+
 }
 
 /* Animation */
-@keyframes popup{
-    from{
-        opacity:0;
-        transform:scale(.5);
-    }
-    to{
-        opacity:1;
-        transform:scale(1);
-    }
+
+@keyframes fade{
+
+from{
+
+opacity:0;
+
+transform:translateY(40px);
+
 }
 
-@keyframes float{
-    0%{
-        transform:translateY(0);
-    }
-    50%{
-        transform:translateY(-10px);
-    }
-    100%{
-        transform:translateY(0);
-    }
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
 }
 
 /* Responsive */
-@media(max-width:480px){
+
+@media(max-width:768px){
 
 .container{
-    width:90%;
-    padding:25px;
-}
 
-.profile{
-    width:130px;
-    height:130px;
+width:100%;
+
+padding:25px;
+
 }
 
 h1{
-    font-size:24px;
+
+font-size:28px;
+
+}
+
+.info span{
+
+font-size:17px;
+
+}
+
+.info p{
+
+font-size:16px;
+
 }
 
 }
